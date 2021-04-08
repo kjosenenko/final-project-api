@@ -10,7 +10,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    render json: @post
+    render json: @post.to_json(:include => {
+      :replies => {:except => [:updated_at, :created_at]}
+  }, :except => [:updated_at, :created_at])
   end
 
   # POST /posts
@@ -18,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      render json: @post, status: :created, location: @post
+      render json: @post, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end
