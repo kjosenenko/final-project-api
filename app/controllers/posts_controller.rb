@@ -5,13 +5,13 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts
+    render json: @posts, except: [:updated_at, :created_at]
   end
 
   # GET /posts/1
   def show
     render json: @post.to_json(:include => {
-      :replies => {:except => [:updated_at, :created_at]}
+      :replies => {:except => [:post_id, :updated_at, :created_at]}
   }, :except => [:updated_at, :created_at])
   end
 
