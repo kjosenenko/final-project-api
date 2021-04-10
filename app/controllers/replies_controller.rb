@@ -18,7 +18,7 @@ class RepliesController < ApplicationController
     @reply = Reply.new(reply_params)
 
     if @reply.save
-      render json: @reply, status: :created, location: @reply
+      render json: @reply, status: :created
     else
       render json: @reply.errors, status: :unprocessable_entity
     end
