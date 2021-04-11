@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application serves as the API to go along with the client side application found at [https://github.com/kjosenenko/final-project-client].
 
-Things you may want to cover:
+After downloading run `bundle install` in your terminal, then set up the SQLite datadbase by running `rails db:migrate`, and finally seed the database by running `rails db:seed`.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Start the server with `rails s` and open your browser to [http://localhost:3001].
